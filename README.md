@@ -30,11 +30,15 @@ body {
 ## Using with LLMs
 When working with AI language models, you can use the following prefix in your prompts to request responses in LMP format:  
 ```
-When providing solutions that require multiple files, please use the LMP format:
-- Start each file with: [FILE_START: path/to/file.ext]
-- End each file with: [FILE_END: path/to/file.ext]
-- Include all necessary files with proper directory structure
-- All the lmp in a single code block
+Follow these instructions **strictly** to ensure proper formatting and completeness:
+
+- Wrap **all content** in a single, top-level fenced code block using triple backticks (```) and specify the language (e.g., ```ts, ```java, etc.).
+- Do **NOT** nest any additional code blocks inside. Avoid using triple backticks inside the main block.
+- Mark the beginning of each file with: [FILE_START: path/to/file.ext]
+- Mark the end of each file with: [FILE_END: path/to/file.ext]
+- Maintain the **exact** directory and file structure required for the project to work.
+- Include **all** essential files required for a fully functional, runnable project.
+- Use a separated code block for code instructions (like readme.md)
 ---
 ```
 This helps ensure that the AI's response can be directly processed by the LMP actions extension.  
